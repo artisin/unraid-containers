@@ -1,0 +1,12 @@
+# List all packages here, which should be included in the container during build time
+numpy
+pandas
+matplotlib
+seaborn
+scipy
+# for %matplotlib widget to work install following:
+ipympl
+# scikit-learn
+# lightgbm
+# xgboost
+# keras
