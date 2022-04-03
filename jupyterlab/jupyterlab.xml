@@ -22,8 +22,8 @@
   [b]/opt/app/data[/b] Where JupyterLab should store the Notebooks[br]&#xD;
   [br][br]&#xD;
   [b][u][span style='color: #E80000;']Set Up[/span][/u][/b][br]&#xD;
-  The logs contain a token needed for first login[br]&#xD;
-  Basic JupyterLab with Python, Node, and Markdown.[br]
+  PASSWORD, GIT_URL (depending on use)[br]&#xD;
+  JupyterLab, with all the goods [br]
 </Overview>
   <Category>Productivity: Tools:</Category>
   <WebUI>http://[IP]:[PORT:9988]</WebUI>
@@ -44,8 +44,8 @@
   [b]/opt/app/data[/b] Where JupyterLab should store the Notebooks[br]&#xD;
   [br][br]&#xD;
   [b][u][span style='color: #E80000;']Set Up[/span][/u][/b][br]&#xD;
-  The logs contain a token needed for first login[br]&#xD;
-  Support for other languages will be added. For now, there is only the basic JupyterLab with Python and Markdown.[br]</Description>
+  PASSWORD, GIT_URL (depending on use)[br]&#xD;
+  JupyterLab, with all the goods [br]</Description>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
@@ -71,13 +71,21 @@
   <Environment>
     <Variable>
       <Value/>
-      <Name>PACKAGES</Name>
+      <Name>PASSWORD</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Environment>
+    <Variable>
+      <Value/>
+      <Name>GIT_URL</Name>
       <Mode/>
     </Variable>
   </Environment>
   <Labels/>
   <Config Name="Notebooks" Target="/opt/app/data" Default="/mnt/user/appdata/jupyterlab/notebooks" Mode="rw" Description="Container Path: /opt/app/data" Type="Path" Display="always" Required="true" Mask="false"/>
-  <Config Name="Packages" Target="PACKAGES" Default="" Mode="" Description="Install Arch Packages to add functionalities." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Password" Target="PASSWORD" Default="" Mode="" Description="Notebook Password" Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="Git Url Target" Target="GIT_URL" Default="" Mode="" Description="Git Url Target" Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="WebUI" Target="9988" Default="" Mode="tcp" Description="Container Port: 9988" Type="Port" Display="always" Required="true" Mask="false">9988</Config>
   <Config Name="Appdata" Target="/appdata" Default="/mnt/user/appdata/jupyterlab/config" Mode="rw" Description="Container Path: /appdata" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/jupyterlab/config</Config>
 </Container>
