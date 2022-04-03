@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Changes>
+  [b]2022-04-2:[/b] init
+  </Changes>
+  <Name>jupyterlab</Name>
+  <Repository>artisin/unraid-containers</Repository>
+  <Registry>https://github.com/artisin/unraid-containers/pkgs/artisin/unraid-containers</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/artisin/unraid-containers</Support>
+  <Project>https://jupyter.org/</Project>
+  <Overview>JupyterLab is a web-based interactive development environment for Jupyter notebooks, code, and data. &#xD;
+  [br][br]&#xD;
+  [b][u][span style='color: #E80000;']Links[/span][/u][/b][br]&#xD;
+  [b]Repository:[/b] https://github.com/jupyterlab/jupyterlab[br]&#xD;
+  [b]Wiki:[/b] https://jupyterlab.readthedocs.io/en/stable/[br]&#xD;
+  [br][br]&#xD;
+  [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]&#xD;
+  [b]/opt/app/data[/b] Where JupyterLab should store the Notebooks[br]&#xD;
+  [br][br]&#xD;
+  [b][u][span style='color: #E80000;']Set Up[/span][/u][/b][br]&#xD;
+  The logs contain a token needed for first login[br]&#xD;
+  Basic JupyterLab with Python, Node, and Markdown.[br]
+</Overview>
+  <Category>Productivity: Tools:</Category>
+  <WebUI>http://[IP]:[PORT:9988]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/artisin/unraid-ca/master/jupyterlab/icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1597689640</DateInstalled>
+  <DonateText/>
+  <Description>JupyterLab is a web-based interactive development environment for Jupyter notebooks, code, and data. &#xD;
+  [br][br]&#xD;
+  [b][u][span style='color: #E80000;']Links[/span][/u][/b][br]&#xD;
+  [b]Repository:[/b] https://github.com/jupyterlab/jupyterlab[br]&#xD;
+  [b]Wiki:[/b] https://jupyterlab.readthedocs.io/en/stable/i[br]&#xD;
+  [br][br]&#xD;
+  [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]&#xD;
+  [b]/opt/app/data[/b] Where JupyterLab should store the Notebooks[br]&#xD;
+  [br][br]&#xD;
+  [b][u][span style='color: #E80000;']Set Up[/span][/u][/b][br]&#xD;
+  The logs contain a token needed for first login[br]&#xD;
+  Support for other languages will be added. For now, there is only the basic JupyterLab with Python and Markdown.[br]</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>9988</HostPort>
+        <ContainerPort>9988</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir/>
+      <ContainerDir>/opt/app/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/jupyterlab/config</HostDir>
+      <ContainerDir>/appdata</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value/>
+      <Name>PACKAGES</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Notebooks" Target="/opt/app/data" Default="/mnt/user/appdata/jupyterlab/notebooks" Mode="rw" Description="Container Path: /opt/app/data" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Packages" Target="PACKAGES" Default="" Mode="" Description="Install Arch Packages to add functionalities." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="WebUI" Target="9988" Default="" Mode="tcp" Description="Container Port: 9988" Type="Port" Display="always" Required="true" Mask="false">9988</Config>
+  <Config Name="Appdata" Target="/appdata" Default="/mnt/user/appdata/jupyterlab/config" Mode="rw" Description="Container Path: /appdata" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/jupyterlab/config</Config>
+</Container>
